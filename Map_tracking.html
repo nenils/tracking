@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dae2337a258e4263ab5225f9dc8e2126 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_dae2337a258e4263ab5225f9dc8e2126" ></div>
+        
+</body>
+<script>    
+    
+            var map_dae2337a258e4263ab5225f9dc8e2126 = L.map(
+                "map_dae2337a258e4263ab5225f9dc8e2126",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e70719789b05472e9ea54d57675d8e4a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            var fast_marker_cluster_ee7c405d6baf4b36a74d2963f9d635c6 = (function(){
+                
+                var callback = function (row) {
+                    var icon = L.AwesomeMarkers.icon();
+                    var marker = L.marker(new L.LatLng(row[0], row[1]));
+                    marker.setIcon(icon);
+                    return marker;
+                };
+
+                var data = [[47.3744489, 8.5410422], [48.9397149, 8.40427], [49.4892913, 8.4673098], [48.8908846, 8.7029532], [49.0068705, 8.4034195], [49.0068705, 8.4034195], [47.9960901, 7.8494005], [48.1371079, 11.5753822], [47.5553231, 7.6545614], [49.4704113, 8.4381568], [53.550341, 10.000654], [52.5170365, 13.3888599], [50.938361, 6.959974]];
+                var cluster = L.markerClusterGroup({});
+
+                for (var i = 0; i < data.length; i++) {
+                    var row = data[i];
+                    var marker = callback(row);
+                    marker.addTo(cluster);
+                }
+
+                cluster.addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+                return cluster;
+            })();
+        
+    
+            var layer_control_e0c92023541f44cea6e15d0f3d7ac4df = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_e70719789b05472e9ea54d57675d8e4a,
+                },
+                overlays :  {
+                    "macro_element_ee7c405d6baf4b36a74d2963f9d635c6" : fast_marker_cluster_ee7c405d6baf4b36a74d2963f9d635c6,
+                },
+            };
+            L.control.layers(
+                layer_control_e0c92023541f44cea6e15d0f3d7ac4df.base_layers,
+                layer_control_e0c92023541f44cea6e15d0f3d7ac4df.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            map_dae2337a258e4263ab5225f9dc8e2126.fitBounds(
+                [[47.3744489, 6.959974], [53.550341, 13.3888599]],
+                {}
+            );
+        
+    
+            var marker_104c7fb1b3bd4099b5212ed8b9e553c4 = L.marker(
+                [47.3744489, 8.5410422],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_104c7fb1b3bd4099b5212ed8b9e553c4.bindTooltip(
+                `<div>
+                     Name: Maggi<br>Products: Heat Pump, Chiller<br> Crabon Footprint: 4t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1ef86e3cde1c4f8a846534c833fb53e5 = L.marker(
+                [48.9397149, 8.40427],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_1ef86e3cde1c4f8a846534c833fb53e5.bindTooltip(
+                `<div>
+                     Name: Dr.Oetker<br>Products: Compressor<br> Crabon Footprint: 5t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_820f2eeb51ab44e0b5d52430d02d9056 = L.marker(
+                [49.4892913, 8.4673098],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_820f2eeb51ab44e0b5d52430d02d9056.bindTooltip(
+                `<div>
+                     Name: Roche<br>Products: Heat Pump, Chiller<br> Crabon Footprint: 16t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_366a8ab2d55b4e1e8b46a60804aa276b = L.marker(
+                [48.8908846, 8.7029532],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_366a8ab2d55b4e1e8b46a60804aa276b.bindTooltip(
+                `<div>
+                     Name: Fächerbad<br>Products: Compressor<br> Crabon Footprint: 2t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e1985d5e21f4c09b627204c7925ef61 = L.marker(
+                [49.0068705, 8.4034195],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_4e1985d5e21f4c09b627204c7925ef61.bindTooltip(
+                `<div>
+                     Name: Hoepfner<br>Products: Heat Pump, Chiller, and additional compressor<br> Crabon Footprint: 4t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_95577422bdc548dd8d9c7b726fbc73bc = L.marker(
+                [49.0068705, 8.4034195],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_95577422bdc548dd8d9c7b726fbc73bc.bindTooltip(
+                `<div>
+                     Name: Moninger<br>Products: Compressor<br> Crabon Footprint: 4t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1f0dd250e2744778a2b1a194acdb378f = L.marker(
+                [47.9960901, 7.8494005],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_1f0dd250e2744778a2b1a194acdb378f.bindTooltip(
+                `<div>
+                     Name: Schwarzwald_Milch<br>Products: Heat Pump, Chiller<br> Crabon Footprint: 5t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_077e5241ca53498aa6e1b182c7789d5b = L.marker(
+                [48.1371079, 11.5753822],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_077e5241ca53498aa6e1b182c7789d5b.bindTooltip(
+                `<div>
+                     Name: Innocent<br>Products: Heat Pump, Chiller, and additional compressor<br> Crabon Footprint: 5t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7dc9e18b06b242049f554d5db5ef2aaa = L.marker(
+                [47.5553231, 7.6545614],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_7dc9e18b06b242049f554d5db5ef2aaa.bindTooltip(
+                `<div>
+                     Name: Bayer<br>Products: Heat Pump, Chiller, and additional compressor<br> Crabon Footprint: 16t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2f5b175e89994ec7ae1290ea87f897d6 = L.marker(
+                [49.4704113, 8.4381568],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_2f5b175e89994ec7ae1290ea87f897d6.bindTooltip(
+                `<div>
+                     Name: BASF<br>Products: Heat Pump, Chiller, and additional compressor<br> Crabon Footprint: 16t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9ff37ca4956047818348b069f5ee696b = L.marker(
+                [53.550341, 10.000654],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_9ff37ca4956047818348b069f5ee696b.bindTooltip(
+                `<div>
+                     Name: Nordsee<br>Products: Chiller<br> Crabon Footprint: 10t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29634e45b6034cf28f04229325506f69 = L.marker(
+                [52.5170365, 13.3888599],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_29634e45b6034cf28f04229325506f69.bindTooltip(
+                `<div>
+                     Name: GEA_Refrigeration&Heating<br>Products: Heat Pump, Chiller, and additional compressor<br> Crabon Footprint: 1t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdfd10d9a4ea4e109d2cca7739aa1625 = L.marker(
+                [50.938361, 6.959974],
+                {}
+            ).addTo(map_dae2337a258e4263ab5225f9dc8e2126);
+        
+    
+            marker_fdfd10d9a4ea4e109d2cca7739aa1625.bindTooltip(
+                `<div>
+                     Name: früh<br>Products: Chiller<br> Crabon Footprint: 4t
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
