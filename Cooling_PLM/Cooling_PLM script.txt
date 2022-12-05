@@ -1,0 +1,30 @@
+FRAME 1:
+
+Label: Notification
+
+---
+
+FRAME 2:
+
+Label: Information
+
+---
+
+FRAME 3:
+
+Label: Action
+
+---
+
+FRAME 4:
+
+---
+
+FRAME 5:
+
+---
+
+FRAME 6:
+
+---
+
